@@ -15,7 +15,17 @@
           <p class="subtitle">一个先从基础规则开始的原型版本。</p>
         </div>
 
-        <div class="status-card">
+        <div class="info-card">
+          <p class="card-title">分数</p>
+          <div class="score-value" id="score-count">0</div>
+        </div>
+
+        <div class="info-card status-card">
+          <p class="card-title">游戏信息</p>
+          <div class="status-item">
+            <span class="label">关卡</span>
+            <strong id="level-count">1 / 10</strong>
+          </div>
           <div class="status-item">
             <span class="label">状态</span>
             <strong id="game-status">准备开始</strong>
@@ -30,15 +40,22 @@
           <button id="reset-btn" type="button">重新开始</button>
         </div>
 
-        <ul class="legend">
-          <li>左键：翻开格子</li>
-          <li>右键：插旗 / 取消插旗</li>
-          <li>清空所有非地雷格子即可胜利</li>
-        </ul>
+        <div class="info-card">
+          <p class="card-title">操作说明</p>
+          <ul class="legend">
+            <li>方向键：移动当前选中格子</li>
+            <li>数字键 1：翻开格子</li>
+            <li>数字键 2：插旗 / 取消插旗</li>
+            <li>一共 10 关，胜利后自动进入下一关</li>
+            <li>清空所有非地雷格子即可胜利</li>
+          </ul>
+        </div>
       </section>
 
       <section class="board-wrap">
         <div id="board" class="board" aria-label="扫雷棋盘"></div>
+        <div id="fx-layer" class="fx-layer" aria-hidden="true"></div>
+        <div id="board-overlay" class="board-overlay" hidden aria-live="polite"></div>
       </section>
     </main>
 
